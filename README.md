@@ -20,7 +20,7 @@ Before running the script, ensure you have Python installed on your system along
 You can install these packages using pip:
 
 ```
-pip install requests beautifulsoup4 pandas
+pip install -r requirements.txt
 ```
 
 ## How to Use
@@ -28,7 +28,7 @@ pip install requests beautifulsoup4 pandas
 1. **Start the Script**: Run the script in your terminal or command prompt.
 
 ```bash
-python lazada_review_scraper.py
+python scraper.py
 ```
 
 2. **Enter the Product URL**: When prompted, input the URL of the product you wish to scrape reviews for. If you want to use a sample URL provided in the script, simply enter `.`.
@@ -51,7 +51,3 @@ python lazada_review_scraper.py
 
 - The script uses a sample URL for demonstration purposes. Replace it with the desired product URL or input it when prompted.
 - Ensure your internet connection is stable while running the script to avoid any interruptions during the data scraping process.
-
-## Disclaimer
-
-This script is for educational purposes only. Please be mindful of Lazada's terms of service regarding web scraping and use this script responsibly.

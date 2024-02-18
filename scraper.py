@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import os
 
 
 def extract_product_id(url):
@@ -33,6 +34,7 @@ def data_to_df(data_json, df):
 
 
 if __name__ == '__main__':
+    os.makedirs('data', exist_ok=True)    
     df = pd.DataFrame(columns=['buyerName', 'rating', 'reviewContent', 'reviewTime'])
     input_url = input('enter your desired url (enter . for sample url):')
     if input_url == '.':
@@ -45,4 +47,4 @@ if __name__ == '__main__':
         review_json = get_reviews(page, product_id)
         df = data_to_df(review_json, df)
         print(f'product id: {product_id}', f'reviews_scraped: {df.shape[0]}', f'page number: {page}')
-    df.to_csv(f'{product_id}.csv')
+    df.to_csv(os.path.join('data', f'{product_id}.csv'))
